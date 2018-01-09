@@ -1,0 +1,274 @@
+
+          Bomb v1.29 12/8/2002
+
+           organic visual music
+
+          http://draves.org/bomb
+
+
+
+     scroll down with arrow/page keys
+
+
+
+
+     >>>>> table of contents <<<<<
+
+      basic operation
+      keyboard commands
+      more commands
+      other organs
+      color controls
+      image library
+      sound input
+
+
+
+     >>>>> basic operation <<<<<
+
+If you run Bomb and leave it alone (ie
+don't touch the keyboard), it will go
+into automatic mode (automode).  Select
+an audio source with the regular windows
+control panel, relax, and enjoy.  Use
+Control-C or ESC to exit.
+
+A collection of about 20 parameters
+control how the image on the screen
+changes.  Each parameter set defines a
+particular texture, shape, or effect.
+As long as the parameters remain
+unchanged the same basic visual pattern
+will evolve on screen.  In automode the
+parameters are occasionally varied at
+random.
+
+Bomb starts out with roughly the same
+parameters every time: a boiling texture
+dissolving the title page. If you wait,
+the parameters will change and new
+effects will appear.
+
+
+
+    >>>>> keyboard commands <<<<<
+
+It's also possible to change the
+parameters manually with the keyboard.
+The space bar randomizes all parameters
+and clears the screen.  It can be used
+as a 'reject button': if Bomb is doing
+something stupid, hit the space bar and
+a new (and hopefully better) effect will
+appear.  This is the crudest possible
+control.
+
+The rest of the keys are mapped to
+commands that adjust the various
+parameters.  The normal layout is
+described below.  Access to the
+easier-to-remember 'mood organ' mappings
+follow.
+
+The middle row of keys (asdfghjkl;')
+changes the rule.  The rule controls the
+basic algorithm used by the effect.
+Variants of a rule can be accessed by
+pressing the same key repeatedly (try
+hitting 'f' or 'g' several times).  Here
+are the keys, rules, and the number of
+variations:
+
+  a  rug          3
+  s  image rug    1
+  d  react/diffuse 2
+  f  rotor/flame  9
+  g  acidlife     2
+  h  multi rug    1
+  j  anneal rug   2
+  k  slip         1
+  l  rug rug      1
+  ;  brain rug    1
+  '  fish/slugs   2
+  A  static       1
+  F  fuse         4
+  G  quad         1
+
+
+The lower row of keys (zxcvbn) randomize
+individual parameters for finer control:
+
+  z  change speed/texture
+  x  fill screen
+  c  change color
+  v  next shape
+  b  next shape II
+  n  toggle rhythm/sound
+  m  next shape III
+
+v is context sensitive, think of it as
+getting the 'next shape'.  Eg in image
+rule it loads a new image, in rotor rule
+it picks a new harmony or flame, in the
+brain it changes the excitation rules.
+b is a variant of v, be sure to try it
+with the brain.  Use m and b with
+react/diffuse.  m in image mode uses the
+image sequences.
+
+
+
+The top row selects an individual
+parameter to vary.  After the parameter
+is selected, the ,. keys (unshifted <>)
+move the value up and down.  Eg while in
+image rule try pressing r, then several
+commas.  You can also type a number
+followed by RETURN to enter a specific
+value, or repeatedly hit the parameter
+key to increment/toggle the value (try
+uuuu).
+
+  q  color map
+  w  beat size
+  e  beat speed
+  r  texture/speed
+  t  # icons in window
+  y  icon sequence
+  u  toggle smooth color
+  i  texture/mask -- unusable
+  o  misc
+  p  blit rect size
+  [  speed of shape change
+  ]  speed of driver rule
+  \  assoc search time
+  {  hot time
+  }  cool time
+  |  brain rule
+  P  brain shift
+  O  cycle bkg (in rug2)
+  I  smooth/random underflow
+
+
+
+    >>>>> more commands <<<<<
+
+  B   fade to black
+  Q   enter automode
+  0   (zero) disable automode
+  L   toggle mode lock
+  =   dump frame to dribble dir
+  +   toggle periodic dribble
+  Z   new image and clear screen
+  WER pulse colormap
+  C   invert driver
+  /   load driver
+  D   permute colormap by rotating bits
+  S   toggle smooth/plain cmap
+  J   double board horiz
+  H   double board vert
+  ^F  toggle display frame rate and levels
+
+
+
+      >>>>> other organs <<<<<
+
+The above keyboard commands allow
+exploration of Bomb's entire parameter
+space, but by using clumsy
+random-walking and type-a-number
+interfaces.  Keyboard mappings called
+'organs' allow you to (eg) map a single
+parameter across the whole keyboard.  in
+these modes the space bar and
+exit-program commands still function,
+but all the other keys (including shift
+and control combinations) are mapped to
+the parameter.
+
+the basic organs are
+
+  1     standard
+  2     mood
+  3     shape
+  4     color
+
+[[ currently the digits 1-4 have been
+hijacked and are bound to change the
+organ rather than type-in-numbers ]]
+
+Bomb starts out with the standard organ
+described above.  The shape organ drives
+with different images.  The color organ
+picks the colormap (even keys produce
+smooth/looped colors; odd keys produce
+plain colormaps).  The mood organ binds
+entire parameter sets to individual keys
+(only a-n so far).
+
+The n key toggles use of audio, if
+available and applicable.
+
+
+
+     >>>>> color controls <<<<<
+
+Hit the q key repeatedly to change the
+color palette.  Use the S key to change
+the interpretation of the palette.
+There are three interpretations: smooth,
+semi-smooth, and rough.  The c key sets
+a new and random palette and
+interpretation, and may also set a
+special palette such as grayscale or
+heat.  The B key fades to black.
+
+Or use the color-organ: press 4 then
+press any other key.  Press 1 to end
+color selection with the organ.
+
+
+
+     >>>>> image library <<<<<
+
+Image mode (on the s key) and Fuse mode
+(on the F key) display images that are
+read from files.  Normally you switch
+which image is displayed with the vbZm
+keys.  The images are stored in a
+directory named 'suck' in gif and ppm
+format.  Bomb just uses whatever images
+are found in that directory so it should
+be easy to use your own.
+
+The images are also related to each
+other visually and symbolically.  The
+file 'seq-data' specifies sequences of
+images by name.
+
+
+
+     >>>>> sound input <<<<<
+
+Bomb opens the default audio input
+device.  The regular Windows "Sounds and
+Multimedia" control panel has a "Sound
+Recording" panel where the device can be
+set to the microphone, CD-audio,
+line-in, or line-out (depending on your
+hardware and operating system).  You
+should set the recording level on the
+high side because Bomb has its own level
+control.
+
+The up and down arrow keys adjust the
+audio levels while Bomb is running (they
+scroll while the help file is
+displayed).  Use Control-F to display
+the audio level, the peak level, the
+bias leval (the ambient sound level) and
+the frame rate (from left to right).
+Peaks of 30 to 70 are usually fine.
+
+
+     >>>>> the end <<<<<
